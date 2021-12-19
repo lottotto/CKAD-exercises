@@ -12,6 +12,7 @@ kubernetes.io > Documentation > Tasks > Access Applications in a Cluster > [Acce
 kubernetes.io > Documentation > Tasks > Access Applications in a Cluster > [Use Port Forwarding to Access Applications in a Cluster](https://kubernetes.io/docs/tasks/access-application-cluster/port-forward-access-application-cluster/)
 
 ### Create a namespace called 'mynamespace' and a pod with image nginx called nginx on this namespace
+### `mynamespace`と呼ばれる名前空間を作成し、この名前空間上にnginxと呼ばれるnginxイメージを利用したPodを作成せよ
 
 <details><summary>show</summary>
 <p>
@@ -25,6 +26,7 @@ kubectl run nginx --image=nginx --restart=Never -n mynamespace
 </details>
 
 ### Create the pod that was just described using YAML
+### 前問の内容をYAMLを使ってPodを作成せよ
 
 <details><summary>show</summary>
 <p>
@@ -73,6 +75,7 @@ kubectl run nginx --image=nginx --restart=Never --dry-run=client -o yaml | kubec
 </details>
 
 ### Create a busybox pod (using kubectl command) that runs the command "env". Run it and see the output
+### `kubectl`コマンドを使用して`env`コマンドを実行するbusybox Podを作成せよ. それを動かし、標準出力を確認せよ
 
 <details><summary>show</summary>
 <p>
@@ -89,6 +92,7 @@ kubectl logs busybox
 </details>
 
 ### Create a busybox pod (using YAML) that runs the command "env". Run it and see the output
+### YAMLを利用して`env`コマンドを実行するbusybox podを作成せよ。それを実行し、標準出力を確認せよ
 
 <details><summary>show</summary>
 <p>
@@ -130,6 +134,7 @@ kubectl logs busybox
 </details>
 
 ### Get the YAML for a new namespace called 'myns' without creating it
+### `myns`と呼ばれるあたらしい名前空間を実際に作成することなしに、YAMLで獲得せよ
 
 <details><summary>show</summary>
 <p>
@@ -142,6 +147,7 @@ kubectl create namespace myns -o yaml --dry-run=client
 </details>
 
 ### Get the YAML for a new ResourceQuota called 'myrq' with hard limits of 1 CPU, 1G memory and 2 pods without creating it
+### limitがCPU1コアでメモリ1GBで2Podの`myrq`と呼ばれる新しいリソースクオータを実際に作成することなしにYAMLで獲得せよ
 
 <details><summary>show</summary>
 <p>
@@ -154,6 +160,7 @@ kubectl create quota myrq --hard=cpu=1,memory=1G,pods=2 --dry-run=client -o yaml
 </details>
 
 ### Get pods on all namespaces
+### すべての名前空間上にあるPodを獲得せよ
 
 <details><summary>show</summary>
 <p>
@@ -170,6 +177,7 @@ kubectl get po -A
 </details>
 
 ### Create a pod with image nginx called nginx and expose traffic on port 80
+### 80番ポートを解放したNginxと呼ばれるNginxイメージを利用したPodを作成せよ
 
 <details><summary>show</summary>
 <p>
@@ -182,6 +190,7 @@ kubectl run nginx --image=nginx --restart=Never --port=80
 </details>
 
 ### Change pod's image to nginx:1.7.1. Observe that the container will be restarted as soon as the image gets pulled
+### Podのイメージを`nginx:1.7.1`に変更せよ。イメージがpullされ次第すぐにコンテナが再起動することを観察せよ
 
 <details><summary>show</summary>
 <p>
