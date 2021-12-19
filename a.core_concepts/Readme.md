@@ -228,6 +228,7 @@ kubectl get po nginx -o jsonpath='{.spec.containers[].image}{"\n"}'
 </details>
 
 ### Get nginx pod's ip created in previous step, use a temp busybox image to wget its '/'
+### 前問で作成したNginxPodのIPを獲得し、一時的なbusyboxイメージを使い、wgetで`/`を獲得せよ
 
 <details><summary>show</summary>
 <p>
@@ -257,6 +258,7 @@ kubectl run busybox --image=busybox --rm -it --restart=Never -- wget -O- $(kubec
 </details>
 
 ### Get pod's YAML
+### 前問もPodをYAMLで獲得せよ
 
 <details><summary>show</summary>
 <p>
@@ -275,6 +277,7 @@ kubectl get po nginx --output=yaml
 </details>
 
 ### Get information about the pod, including details about potential issues (e.g. pod hasn't started)
+### 潜在的な状態（例えば、Podがまだスタートしていない）を含む形でそのPodの情報を獲得せよ
 
 <details><summary>show</summary>
 <p>
@@ -287,6 +290,7 @@ kubectl describe po nginx
 </details>
 
 ### Get pod logs
+### Podのログを獲得せよ
 
 <details><summary>show</summary>
 <p>
@@ -299,6 +303,7 @@ kubectl logs nginx
 </details>
 
 ### If pod crashed and restarted, get logs about the previous instance
+### もし、Podがクラッシュもしくは再起動したとき、以前のインスタンスのログを獲得せよ
 
 <details><summary>show</summary>
 <p>
@@ -313,6 +318,7 @@ kubectl logs nginx --previous
 </details>
 
 ### Execute a simple shell on the nginx pod
+### NginxPod上で簡単なShellを実行せよ
 
 <details><summary>show</summary>
 <p>
@@ -325,6 +331,7 @@ kubectl exec -it nginx -- /bin/sh
 </details>
 
 ### Create a busybox pod that echoes 'hello world' and then exits
+### 'hello world'と出力するBusyBoxPodを作成せよ
 
 <details><summary>show</summary>
 <p>
@@ -339,6 +346,7 @@ kubectl run busybox --image=busybox -it --restart=Never -- /bin/sh -c 'echo hell
 </details>
 
 ### Do the same, but have the pod deleted automatically when it's completed
+### 全問の内容を修了すると、completedになり自動的に削除されるPodを作成せよ
 
 <details><summary>show</summary>
 <p>
@@ -352,6 +360,7 @@ kubectl get po # nowhere to be found :)
 </details>
 
 ### Create an nginx pod and set an env value as 'var1=val1'. Check the env value existence within the pod
+### `var1=val1`の環境変数を設定したNginxPodを作成せよ。またその値が実際のPodに適用されているかを調べよ
 
 <details><summary>show</summary>
 <p>
