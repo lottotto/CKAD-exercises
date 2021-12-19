@@ -257,8 +257,8 @@ kubectl run busybox --image=busybox --rm -it --restart=Never -- wget -O- $(kubec
 </p>
 </details>
 
-### Get pod's YAML
 ### 前問もPodをYAMLで獲得せよ
+Get pod's YAML
 
 <details><summary>show</summary>
 <p>
@@ -289,8 +289,8 @@ kubectl describe po nginx
 </p>
 </details>
 
-### Get pod logs
 ### Podのログを獲得せよ
+Get pod logs
 
 <details><summary>show</summary>
 <p>
