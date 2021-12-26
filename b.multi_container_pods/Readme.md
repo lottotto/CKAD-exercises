@@ -144,3 +144,8 @@ kubectl delete po box
 </p>
 </details>
 
+### Memo
+気をつけるべきポイント:
+ - args と command の違い
+ - emptyDirの設定方法
+

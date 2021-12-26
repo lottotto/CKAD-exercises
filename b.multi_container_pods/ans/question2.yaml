@@ -24,3 +24,6 @@ spec:
   volumes:
     - name: work-dir
       emptyDir: {}
+# 終了後下記コマンドを実行し、IPアドレスを調査.その後獲得したIPアドレスでwgetする
+# kubectl get pod -o wide
+# kubectl run busybox --image=busybox --restart=Never -- /bin/sh -c "wget -O- 172.17.0.7"

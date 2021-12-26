@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx1
+  labels:
+    app: v1
+  annotations:
+    description: "my description"
+spec:
+  containers:
+    - image: nginx
+      name: nginx
+      resources: {}
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx2
+  labels:
+    app: v1
+  annotations:
+    description: "my description"
+spec:
+  containers:
+    - image: nginx
+      name: nginx
+      resources: {}
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx3
+  labels:
+    app: v1
+  annotations:
+    description: "my description"
+spec:
+  containers:
+    - image: nginx
+      name: nginx
+      resources: {}

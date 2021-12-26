@@ -852,3 +852,16 @@ status: {}
 
 </p>
 </details>
+
+### memo
+#### deployment
+annotationとlabelの違いって・・・？
+deploymentのautoscalingについて
+`kubectl rollout <SUBCOMMAND>`まわり触れるように練習しておく
+
+#### job
+- activeDeadlineSeconds: JOBの実行時間を定義
+- completions: 成功しなければいけないジョブの回数を指定
+- parallelism:　並列で実行できるジョブの顧数を指定
+deadline超えるとこんな感じ
+`busybox-kbqxp                  0/1     DeadlineExceeded   0          30s`
