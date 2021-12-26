@@ -594,3 +594,22 @@ kubectl describe pod nginx # will see that a new secret called myuser-token-****
 
 </p>
 </details>
+
+
+### メモ
+#### configMap
+- まとめてconfigMapの環境変数を利用したい場合は、envFromして、configMapRefを指定するのがおすすめ
+
+#### securyContext
+- podのsecuryContextとcontainerのsecurtyContextが存在。
+- `capabilities`ってなに？"NET_ADMIN", "SYS_TIME" ってそれぞれなに？
+
+#### secret
+- CLI で作成する時は、`kubectl create secret generic`
+- `kubectl get secret mysecret2 -o yaml | yq e  .data.username - | base64 --decode`
+
+
+### serviceAccount
+- serviceAccountを作成するとtokenという名前のsecretが作られて、証明書に関係する認証情報などが入っている模様
+- serviceAccountを付与したPodはPodSpec部分の`serviceAccount: myuser`で指定可能。`/var/run/secrets/kubernetes.io/serviceaccount`かなんかに上記の認証情報がマウントされる.
+  

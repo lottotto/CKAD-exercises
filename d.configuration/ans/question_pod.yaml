@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: nginx
+  name: nginx
+spec:
+  containers:
+    - image: nginx
+      name: nginx
+      volumeMounts:
+        - name: cmvolume
+          mountPath: /etc/lala
+      env:
+        - name: option
+          valueFrom:
+            configMapKeyRef:
+              name: options
+              key: var5
+      envFrom:
+        - configMapRef:
+            name: config5
+      resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+  volumes:
+    - name: cmvolume
+      configMap:
+        name: cmvolume
