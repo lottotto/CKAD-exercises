@@ -865,3 +865,8 @@ deploymentのautoscalingについて
 - parallelism:　並列で実行できるジョブの顧数を指定
 deadline超えるとこんな感じ
 `busybox-kbqxp                  0/1     DeadlineExceeded   0          30s`
+
+#### cronjob
+- schedule部分は必要
+- startingDeadlineSecondsをつけると軌道に時間がかかった場合にcronjobを修了する
+- jobが時間かかるなどはjob部分で記載
