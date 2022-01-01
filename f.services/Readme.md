@@ -225,3 +225,16 @@ kubectl run busybox --image=busybox --rm -it --restart=Never --labels=access=gra
 
 </p>
 </details>
+
+### メモ
+#### Serive
+- `kubectl run ... --expose`でserviceリソースまで作成する
+- serviceを作成するとcluster-ipが作られる。`kubectl get svc -o wide`で確認可能
+- endpointも作成される。`kubectl get ep`で確認可能
+- デフォルトで作成されるのはClusterIPタイプのサービス
+- NodePortに変えるためには`kubectl edit svc nginx`でタイプを変える
+- NodePortはクラスタの外から打鍵する際のリソース。NodeのIPアドレスとポートをマッピングする
+- サービスをkubectlで作成するのは`kubectl expose`
+
+#### networkPolicy
+- minikube ではうまくいかなかった。。。

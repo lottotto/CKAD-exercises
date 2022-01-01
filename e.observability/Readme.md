@@ -220,3 +220,23 @@ kubectl top nodes
 
 </p>
 </details>
+
+
+### memo
+
+#### liveness probe
+- コンテナが生きているかどうかを判断するのを設定する
+- 通らなくなった場合、コンテナは再作成される
+  - exec, httpGet, tpcSocket の3種類がある
+- 設定するとこうなる→ `Liveness:       exec [ls] delay=0s timeout=1s period=10s #success=1 #failure=3`
+- 初めの5秒を猶予する `initialDelaySeconds`
+- 5秒ごとにする `periodSeconds`
+
+#### readiness probe
+- コンテナが準備できているかどうかを判断する。WARの起動待ちなど
+
+#### debugging 
+- grace-period=0ってなに
+- `kubectl top`を実行するにはmetric-serverを入れないといけないらしい。
+- `kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml`
+- minikube の場合は[こちら](https://kubernetes.io/ja/docs/tasks/configure-pod-container/assign-cpu-resource/)
