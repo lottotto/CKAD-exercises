@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: nginx
+  name: nginx
+spec:
+  containers:
+    - image: nginx
+      name: nginx
+      resources: {}
+      readinessProbe:
+        httpGet:
+          path: /
+          port: 80
+      ports:
+        - containerPort: 80
+          name: nginx-port
+
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
